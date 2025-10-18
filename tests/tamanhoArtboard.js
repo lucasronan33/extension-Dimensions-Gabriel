@@ -1,13 +1,17 @@
 function teste() {
+    var doc = app.activeDocument;
     try {
-        var doc = app.activeDocument;
-        var abIndex = doc.artboards.getActiveArtboardIndex();
-        var ab = doc.artboards[abIndex];
+        var artboards = doc.artboards
+
+        var left = 0
+        var top = 100
+        var right = 100
+        var bottom = 0
+        artboards.add([left, top, right, bottom])
+
+        var canvas =
 
 
-        var width = ab.artboardRect[2] - ab.artboardRect[0]
-        // ab.artboardRect = [left, top, left + largura, top - altura];
-        alert(width)
 
         // alert("Limite é maior que 20000 pt (modo Large Canvas)");
     } catch (e) {
