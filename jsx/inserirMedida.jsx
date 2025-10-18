@@ -16,8 +16,14 @@ function inserirMedida(text, casaDecimal, extMedida, fontColor) {
                 }
 
             }
+
             var dimSelection = convertUnit(item.width, item.height, extMedida)
 
+            // se for uma artboard grande, captura a escala do arquivo e altera as medidas para x10
+            if (doc.scaleFactor === 10) {
+                dimSelection.width *= 10
+                dimSelection.height *= 10
+            }
             var fillColor = cmyk(
                 fontColor[0],
                 fontColor[1],
@@ -31,16 +37,18 @@ function inserirMedida(text, casaDecimal, extMedida, fontColor) {
                 ' x ' + dimSelection.height.toFixed(casaDecimal).replace('.', ',') +
                 ' ' +
                 extMedida
-            texto.position = [item.position[0], item.position[1] + 15]
+            var textSize = texto.textRange.characterAttributes.size
+            texto.textRange.paragraphAttributes.justification = Justification.CENTER
             texto.textRange.characterAttributes.fillColor = fillColor
             texto.textRange.characterAttributes.textFont = app.textFonts.getByName("Gotham-Bold");
+            texto.position = [item.position[0] - (texto.width - item.width), item.position[1] + textSize] // alinhamento a direita do objeto
 
+            // alert(texto.width)
 
         }
-        
-    }
-    catch (error) {
-        alert('error script: ',error)
+
+    } catch (error) {
+        alert('error script: ', error)
     }
 }
 
@@ -48,8 +56,12 @@ function convertUnit(objW, objH, unit) {
     var width = new UnitValue(objW, "pt").as(unit)
     var height = new UnitValue(objH, "pt").as(unit)
 
-    return { width: width, height: height }
+    return {
+        width: width,
+        height: height
+    }
 }
+
 function cmyk(c, m, y, k) {
     var cmyk = new CMYKColor()
     cmyk.cyan = c
@@ -59,3 +71,4 @@ function cmyk(c, m, y, k) {
 
     return cmyk
 }
+// inserirMedida('teste: ', 3, 'pt', [100, 100, 0, 0])
