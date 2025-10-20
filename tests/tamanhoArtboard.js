@@ -7,11 +7,13 @@ function teste() {
         var top = 100
         var right = 100
         var bottom = 0
-        artboards.add([left, top, right, bottom])
+        // artboards.add([left, top, right, bottom])
 
-        var canvas =
+        // var canvas = artboards[artboards.length - 1]
+        // alert(canvas.artboardRect[0])
 
-
+        // var ret = doc.pathItems.rectangle(0, 0, 1, 1)
+        alert(doc.scaleFactor)
 
         // alert("Limite é maior que 20000 pt (modo Large Canvas)");
     } catch (e) {
