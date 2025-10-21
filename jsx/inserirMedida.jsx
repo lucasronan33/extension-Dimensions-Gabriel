@@ -1,4 +1,4 @@
-function inserirMedida(text, casaDecimal, extMedida, fontColor) {
+function inserirMedida(text, casaDecimal, extMedida, fontColor, fontSize) {
 
     var doc = app.activeDocument
     var sel = doc.selection
@@ -42,6 +42,9 @@ function inserirMedida(text, casaDecimal, extMedida, fontColor) {
             texto.textRange.characterAttributes.fillColor = fillColor
             texto.textRange.characterAttributes.textFont = app.textFonts.getByName("Gotham-Bold");
             texto.position = [item.position[0] - (texto.width - item.width), item.position[1] + textSize] // alinhamento a direita do objeto
+            if (fontSize) {
+                texto.textRange.characterAttributes.size = fontSize
+            }
 
             // alert(texto.width)
 

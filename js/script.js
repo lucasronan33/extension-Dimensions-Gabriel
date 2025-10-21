@@ -26,9 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const colorArray = fontColor.split(',').map(Number);
 
                 // Monta comando seguro pro ExtendScript
-                const comandoJSX = `
-      inserirMedida("${text}", ${casas}, "${unidade}", [${colorArray.join(',')}]);
-    `; cs.evalScript(comandoJSX)
+                const comandoJSX = `inserirMedida("${text}", ${casas}, "${unidade}", [${colorArray.join(',')}]);`
+                cs.evalScript(comandoJSX)
             });
         });
     }

@@ -70,3 +70,12 @@ button {
     border: 1vh solid rgb(0, 159, 227);
     color: white;
 }
+
+#fontSize {
+    width: 20%;
+    min-height: 10%;
+    border: 1vh solid rgba(95, 95, 95, 1);
+    border-radius: 2vh;
+    font-size: xxx-large;
+    text-align: center;
+}
