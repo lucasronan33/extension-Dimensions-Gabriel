@@ -11,8 +11,8 @@ body * {
 }
 
 body {
-    width: 100dvw;
-    height: 100dvh;
+    width: 100%;
+    height: 100%;
     min-height: 100px;
     background: #545453;
     color: white;
@@ -72,10 +72,16 @@ button {
 }
 
 #fontSize {
-    width: 20%;
-    min-height: 10%;
-    border: 1vh solid rgba(95, 95, 95, 1);
+    width: 40%;
+    height: 30px;
+    margin-top: 10%;
+    background-color: #454545;
+    border: 1px solid #605f5f;
     border-radius: 2vh;
-    font-size: xxx-large;
     text-align: center;
+}
+
+#fontSize:focus {
+    background-color: white;
+    border: 1px solid rgb(0, 159, 227);
 }

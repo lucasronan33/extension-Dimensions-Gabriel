@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.meters'),
             document.querySelector('.milimeters')
         ];
+        const fontSize = document.querySelector('#fontSize')
 
         arrayButtons.forEach(element => {
             element.addEventListener('click', () => {
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const colorArray = fontColor.split(',').map(Number);
 
                 // Monta comando seguro pro ExtendScript
-                const comandoJSX = `inserirMedida("${text}", ${casas}, "${unidade}", [${colorArray.join(',')}]);`
+                const comandoJSX = `inserirMedida("${text}", ${casas}, "${unidade}", [${colorArray.join(',')}], ${fontSize.value});`
                 cs.evalScript(comandoJSX)
             });
         });

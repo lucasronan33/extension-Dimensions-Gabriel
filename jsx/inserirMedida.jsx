@@ -1,9 +1,13 @@
 function inserirMedida(text, casaDecimal, extMedida, fontColor, fontSize) {
 
-    var doc = app.activeDocument
-    var sel = doc.selection
-
     try {
+
+        var doc = app.activeDocument
+        var sel = doc.selection
+
+        if (sel.length === 0) {
+            throw new Error('Nenhum objeto selecionado!')
+        }
         for (var i = 0; i < sel.length; i++) {
             var item = sel[i]
 
@@ -51,7 +55,7 @@ function inserirMedida(text, casaDecimal, extMedida, fontColor, fontSize) {
         }
 
     } catch (error) {
-        alert('error script: ', error)
+        alert(error, error.message)
     }
 }
 
@@ -74,4 +78,4 @@ function cmyk(c, m, y, k) {
 
     return cmyk
 }
-// inserirMedida('teste: ', 3, 'pt', [100, 100, 0, 0])
+// inserirMedida('teste: ', 3, 'pt', [100, 100, 0, 0], '250')

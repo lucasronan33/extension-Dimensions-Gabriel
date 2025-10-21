@@ -49,12 +49,12 @@
               <Height>300</Height>
             </MaxSize>
           </Geometry>
-          <!-- <Icons>
-            <Icon Type="Normal">icone-pdf.svg</Icon>
-            <Icon Type="RollOver">icone-pdf.svg</Icon>
-            <Icon Type="DarkNormal">icone-pdf.svg</Icon>
-            <Icon Type="DarkRollOver">icone-pdf.svg</Icon>
-          </Icons> -->
+          <Icons>
+            <Icon Type="Normal">./icons/icon_normal.png</Icon>
+            <Icon Type="RollOver">./icons/icon_rollover.png</Icon>
+            <Icon Type="DarkNormal">./icons/icon_darknormal.png</Icon>
+            <Icon Type="DarkRollOver">./icons/icon_darkrollover.png</Icon>
+          </Icons>
         </UI>
       </DispatchInfo>
     </Extension>
