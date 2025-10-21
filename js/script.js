@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const fontColor = element.dataset.fontcolor; // "0,100,0,0" (string)
                 const text = element.dataset.text; // Ex: "Final: "
-                const casas = element.dataset.casadecimal || 2;
+                const casas = element.dataset.casadecimal || 0;
                 const unidade = element.innerText; // "cm" ou "mm"
 
                 // Converte string em array JS de número
@@ -33,6 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     catch (error) {
-        alert('error: ', error)
+        // alert('error: ', error)
     }
 })
