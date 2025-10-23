@@ -84,6 +84,7 @@ button {
 
 .inputs input:focus {
     background-color: white;
+    color: initial;
     border: 1px solid rgb(0, 159, 227);
 }
 

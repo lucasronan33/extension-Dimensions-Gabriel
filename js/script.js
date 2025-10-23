@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             element.addEventListener('click', () => {
 
                 const fontColor = element.dataset.fontcolor; // "0,100,0,0" (string)
-                const text = element.dataset.text; // Ex: "Final: "
+                const text = document.querySelector('#legend').value || element.dataset.text; // Ex: "Final: "
                 const casas = element.dataset.casadecimal || 0;
                 const unidade = element.innerText; // "cm" ou "mm"
 
